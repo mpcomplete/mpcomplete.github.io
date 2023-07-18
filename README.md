@@ -5,5 +5,3 @@
 # [Wave Function Collapse](wfc)
 
 # [Flow](flow)
-
-# [GeoBattles](geobattles)
