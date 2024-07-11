@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Happy Birthday</title>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #000;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+    #regl-canvas {
+      left: 0px;
+      top: 0px;
+      border: 0px; margin: 0px; padding: 0px; top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;
+      display: none;
+    }
+    #screen-canvas {
+      left: 0px;
+      top: 0px;
+      border: 0px; margin: 0px; padding: 0px; top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;
+    }
+    #status {
+      position: fixed;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      margin-top: -10pt;
+      font: 30pt serif;
+      color: white;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="regl-canvas"></canvas>
+  <canvas id="screen-canvas"></canvas>
+  <div id="status">Click/Touch and drag</div>
+  <script src="bundle.js"></script>
+</body>
+</html>
