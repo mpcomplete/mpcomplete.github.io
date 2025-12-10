@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlingBling</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #aaa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .bg {
+            background: linear-gradient(to bottom right, #111 0%, #777 50%, #999 100%);
+        }
+
+        canvas {
+            display: block;
+        }
+        #start-screen {
+            text-align: center;
+            color: white;
+        }
+        #start-screen h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        #start-screen div {
+            margin-top: 20px;
+        }
+        #start-button {
+            padding: 15px 30px;
+            font-size: 24px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-button:hover {
+            background: #45a049;
+        }
+        button {
+            margin: 5px;
+            padding: 5px 10px;
+            background: #333;
+            color: white;
+            border: 1px solid #666;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #555;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-MrEjBvUg.js"></script>
+</head>
+<body class="bg">
+    <div id="start-screen">
+        <h1>BlingBling</h1>
+        <button id="start-button">Play</button>
+        <div>(use A/S/D to move, Q/E to rotate)</div>
+    </div>
+</body>
+</html>
