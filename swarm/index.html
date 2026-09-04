@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swarm</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 4px;
+            background: #1a1a1a;
+            color: white;
+            font-family: 'Courier New', monospace;
+        }
+        #canvas-container {
+            position: relative; /* Essential for absolute positioning of children */
+            width: 100%;
+            height: 100%;
+        }
+
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            font-family: 'Arial';
+        }
+
+        #hud {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            font-family: 'Arial';
+        }
+
+        .controls {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        label {
+            font-size: 12px;
+            color: #ccc;
+        }
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            padding: 20px;
+        }
+        .stats {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+  <script type="module" crossorigin src="/swarm/assets/index-GuhiD4YL.js"></script>
+  <link rel="stylesheet" crossorigin href="/swarm/assets/index-D05Jb5I_.css">
+</head>
+<body>
+    <div id="error-message" class="error" style="display: none;"></div>
+
+    <div id="canvas-container">
+        <canvas id="canvas"></canvas>
+        <div id="hud">
+            <button class="button phase-planning" id="fight-btn">Fight</button>
+            <button class="button js-modal-trigger phase-planning" data-target="upgrades-window">Upgrades</button>
+            <div>Cash: <span id="hud-cash">0</span></div>
+            <div>Purps: <span id="hud-purps">---</span></div>
+            <div>Greenies: <span id="hud-greens">---</span></div>
+            <div>Projectiles: <span id="hud-projectiles">---</span></div>
+        </div>
+    </div>
+
+    <div id="upgrades-window" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Upgrades</p>
+                <button class="delete is-large" aria-label="close"></button>
+            </header>
+            <section id="upgrades-list" class="modal-card-body p-2">
+            </section>
+        </div>
+    </div>
+
+    <div class="stats">
+        <span id="fps-display">FPS: --</span> |
+        <span id="grid-info">Grid: --x-- (-- cells)</span>
+    </div>
+
+    <div class="grid">
+        <div class="controls">
+            <label>Particle Count: <span id="particle-count-display">6400</span></label>
+            <input type="range" id="particle-count" min="100" max="100000" step="500" value="40000">
+        </div>
+        <div id="buttons" class="grid">
+            <div class="cell">
+            <button class="button" id="reset-btn">Restart</button>
+            </div>
+            <div class="cell">
+            <button class="button" id="pause-btn">Pause</button>
+            </div>
+            <div class="cell">
+            <button class="button" id="debug-btn">Debug</button>
+            </div>
+            <div class="cell">
+            <button class="button" id="sort-btn">Sorting</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
